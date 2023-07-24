@@ -8,7 +8,7 @@ export default function TextForm(props) {
     setText(newText);
     props.showAlert("converted to uppercase!", "success");
   };
-
+// Use Arrow function 
   const handlelwClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
