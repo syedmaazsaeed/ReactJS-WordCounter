@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 
-
-
 export default function TextForm(props) {
   const [text, setText] = useState("");
 
   const handleUpClick = () => {
-  
     let newText = text.toUpperCase();
     setText(newText);
     props.showAlert("converted to uppercase!", "success");
@@ -51,7 +48,6 @@ export default function TextForm(props) {
 
   const handleOnChange = (event) => {
     setText(event.target.value);
-    
   };
   const handleCopy = () => {
     var text = document.getElementById("myBox");
@@ -60,10 +56,11 @@ export default function TextForm(props) {
     props.showAlert("Text has been Copied!", "success");
   };
 
-  const wordCount = text.trim().split(/\s+/).filter(word => word !== '').length;
+  const wordCount = text
+    .trim()
+    .split(/\s+/)
+    .filter((word) => word !== "").length;
 
-
- 
   return (
     <>
       <div
@@ -80,7 +77,7 @@ export default function TextForm(props) {
               style={{
                 resize: "none",
                 backgroundColor: props.mode === "dark" ? "grey" : "white",
-                color:props.mode ==='dark' ? "white" : 'black'
+                color: props.mode === "dark" ? "white" : "black",
               }}
               id="myBox"
               rows="9"
@@ -89,10 +86,18 @@ export default function TextForm(props) {
           <button className="btn btn-primary mx-1" onClick={handleUpClick}>
             Convert to UpperCase{" "}
           </button>
-          <button className="btn btn-info mx-1" onClick={handlelwClick}>
+          <button
+            className="btn btn-info mx-1"
+            onClick={handlelwClick}
+            style={{ margin: "7px" }}
+          >
             Convert to LowerCase{" "}
           </button>
-          <button className="btn btn-danger" onClick={handleClearClick}>
+          <button
+            className="btn btn-danger"
+            onClick={handleClearClick}
+            style={{ margin: "7px" }}
+          >
             Clear Text
           </button>
           <button
@@ -140,19 +145,22 @@ export default function TextForm(props) {
         </div>
 
         <div className="container my-3">
-          <h2>Your Text Summary</h2>
-        
-          <p>{wordCount} words and {text.trim().length} characters</p>
+          <h3>Your Text Summary</h3>
+
+          <p>
+            {wordCount} words and {text.trim().length} characters
+          </p>
+          <h3>Time to Read one Word</h3>
           <p>{0.008 * text.trim().length}</p>
 
           <h2>Preview</h2>
-          <h2>{text.length>0?text:'Type something in the box below to see a preview.'}</h2>
-
+          <p>
+            {text.length > 0
+              ? text
+              : "Type something in the box below to see a preview."}
+          </p>
         </div>
       </div>
     </>
   );
 }
-
-
-
