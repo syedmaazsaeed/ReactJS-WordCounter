@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+   
   const [text, setText] = useState("");
 
   const handleUpClick = () => {
@@ -83,59 +84,59 @@ export default function TextForm(props) {
               rows="9"
             ></textarea>
           </div>
-          <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-1" onClick={handleUpClick}>
             Convert to UpperCase{" "}
           </button>
-          <button
+          <button disabled={text.length===0}
             className="btn btn-info mx-1"
             onClick={handlelwClick}
             style={{ margin: "7px" }}
           >
             Convert to LowerCase{" "}
           </button>
-          <button
+          <button disabled={text.length===0}
             className="btn btn-danger"
             onClick={handleClearClick}
             style={{ margin: "7px" }}
           >
             Clear Text
           </button>
-          <button
+          <button disabled={text.length===0}
             type="submit"
             onClick={speak}
             className="btn btn-warning mx-2 my-2"
           >
             Speak
           </button>
-          <button
+          <button disabled={text.length===0}
             type="submit"
             onClick={pauseSpeaking}
             className="btn btn-secondary mx-2 my-2"
           >
             Pause Speak
           </button>
-          <button
+          <button disabled={text.length===0}
             type="submit"
             onClick={resumeSpeaking}
             className="btn btn-success mx-2 my-2"
           >
             Resume Speak
           </button>
-          <button
+          <button disabled={text.length===0}
             type="submit"
             onClick={handleRemoveSpace}
             className="btn btn-dark mx-2 my-2"
           >
             Remove Spaces
           </button>
-          <button
+          <button disabled={text.length===0}
             type="submit"
             onClick={handleSentenceCase}
             className="btn btn-info mx-2 my-2"
           >
             Sentence Case{" "}
           </button>
-          <button
+          <button disabled={text.length===0}
             type="submit"
             onClick={handleCopy}
             className="btn btn-success mx-2 my-2"
