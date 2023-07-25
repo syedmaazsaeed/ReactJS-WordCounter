@@ -21,12 +21,12 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#343a46";
       showAlert("Dark mode has been Enabled", "success");
-      document.title="TextWizard - Dark Mode";
+      // document.title="TextWizard - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("light mode has been Enabled", "success");
-      document.title="TextWizard - Light Mode";
+      // document.title="TextWizard - Light Mode";
     }
   };
 
