@@ -158,7 +158,7 @@ export default function TextForm(props) {
           <p>
             {text.length > 0
               ? text
-              : "Type something in the box below to see a preview."}
+              : "Nothing to preview! ."}
           </p>
         </div>
       </div>
