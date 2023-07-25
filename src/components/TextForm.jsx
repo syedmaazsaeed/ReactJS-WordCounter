@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
-   
   const [text, setText] = useState("");
 
   const handleUpClick = () => {
@@ -41,7 +40,7 @@ export default function TextForm(props) {
   };
 
   const handleRemoveExtraSpaces = () => {
-    const cleanedText = text.replace(/\s+/g, ' ');
+    const cleanedText = text.replace(/\s+/g, " ");
     setText(cleanedText);
   };
 
@@ -89,45 +88,55 @@ export default function TextForm(props) {
               rows="9"
             ></textarea>
           </div>
-          <button disabled={text.length===0} className="btn btn-primary mx-1" onClick={handleUpClick}>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1"
+            onClick={handleUpClick}
+          >
             Convert to UpperCase{" "}
           </button>
-          <button disabled={text.length===0}
+          <button
+            disabled={text.length === 0}
             className="btn btn-info mx-1"
             onClick={handlelwClick}
             style={{ margin: "7px" }}
           >
             Convert to LowerCase{" "}
           </button>
-          <button disabled={text.length===0}
+          <button
+            disabled={text.length === 0}
             className="btn btn-danger"
             onClick={handleClearClick}
             style={{ margin: "7px" }}
           >
             Clear Text
           </button>
-          <button disabled={text.length===0}
+          <button
+            disabled={text.length === 0}
             type="submit"
             onClick={speak}
             className="btn btn-warning mx-2 my-2"
           >
             Speak
           </button>
-          <button disabled={text.length===0}
+          <button
+            disabled={text.length === 0}
             type="submit"
             onClick={pauseSpeaking}
             className="btn btn-secondary mx-2 my-2"
           >
             Pause Speak
           </button>
-          <button disabled={text.length===0}
+          <button
+            disabled={text.length === 0}
             type="submit"
             onClick={resumeSpeaking}
             className="btn btn-success mx-2 my-2"
           >
             Resume Speak
           </button>
-          <button disabled={text.length===0}
+          <button
+            disabled={text.length === 0}
             type="submit"
             onClick={handleRemoveSpace}
             className="btn btn-dark mx-2 my-2"
@@ -135,21 +144,23 @@ export default function TextForm(props) {
             Remove Spaces
           </button>
           <button
-        disabled={text.length === 0}
-        type="submit"
-        onClick={handleRemoveExtraSpaces}
-        className="btn btn-dark mx-2 my-2"
-      >
-        Remove Extra Spaces
-      </button>
-          <button disabled={text.length===0}
+            disabled={text.length === 0}
+            type="submit"
+            onClick={handleRemoveExtraSpaces}
+            className="btn btn-dark mx-2 my-2"
+          >
+            Remove Extra Spaces
+          </button>
+          <button
+            disabled={text.length === 0}
             type="submit"
             onClick={handleSentenceCase}
             className="btn btn-info mx-2 my-2"
           >
             Sentence Case{" "}
           </button>
-          <button disabled={text.length===0}
+          <button
+            disabled={text.length === 0}
             type="submit"
             onClick={handleCopy}
             className="btn btn-success mx-2 my-2"
@@ -168,11 +179,7 @@ export default function TextForm(props) {
           <p>{0.008 * text.trim().length}</p>
 
           <h2>Preview</h2>
-          <p>
-            {text.length > 0
-              ? text
-              : "Nothing to preview! ."}
-          </p>
+          <p>{text.length > 0 ? text : "Nothing to preview! ."}</p>
         </div>
       </div>
     </>
