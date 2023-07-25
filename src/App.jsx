@@ -49,7 +49,7 @@ function App() {
         {activePage === "home" ? (
           <TextForm
             showAlert={showAlert}
-            heading="Enter the text to Analyze Below"
+            heading="Try TextWizards - Word Counter"
             mode={mode}
           />
         ) : (
