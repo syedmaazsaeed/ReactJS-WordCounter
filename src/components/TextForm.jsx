@@ -40,6 +40,11 @@ export default function TextForm(props) {
     props.showAlert("Remove Spaces!", "success");
   };
 
+  const handleRemoveExtraSpaces = () => {
+    const cleanedText = text.replace(/\s+/g, ' ');
+    setText(cleanedText);
+  };
+
   const handleSentenceCase = () => {
     let newText = text.toLowerCase();
     newText = newText.charAt(0).toUpperCase() + newText.slice(1);
@@ -129,6 +134,14 @@ export default function TextForm(props) {
           >
             Remove Spaces
           </button>
+          <button
+        disabled={text.length === 0}
+        type="submit"
+        onClick={handleRemoveExtraSpaces}
+        className="btn btn-dark mx-2 my-2"
+      >
+        Remove Extra Spaces
+      </button>
           <button disabled={text.length===0}
             type="submit"
             onClick={handleSentenceCase}
